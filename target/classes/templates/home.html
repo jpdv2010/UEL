@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="index">
+<head>
+    <title>Unitri Games Championship</title>
+</head>
+<section layout:fragment="content">
+    <header layout:include="nav"></header>
+    <div id="header-wrapper">
+
+        <div id="banner">
+            <div class="content">
+                <div style="float:left;"><img src="/images/HD1.png" width="320" height="304" alt="" /></div>
+                <div style="float:right;"><img src="/images/lol.png" width="320" height="304" alt="" /></div>
+            </div>
+        </div>
+        <div id="page">
+            <div class="post">
+                <h2 class="title"><a href="#">Bem vindo ao campeonato de games do Centro Universitário do Triângulo</a></h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="featured-content">
+        <div id="column1">
+            <h2>CS:GO</h2>
+            <p><img src="/images/csgo.jpg" width="300" height="150" alt="" /></p>
+            <p>Cadastre-se no campeonato de CS: Global Ofensive.</p>
+            <p class="button"><a href="/competidor/novo">Saiba Mais</a></p>
+        </div>
+        <div id="column2">
+            <h2>LoL</h2>
+            <p><img src="/images/lol.jpg" width="300" height="150" alt="" /></p>
+            <p>Cadastre-se no campeonato de League of Legends.</p>
+            <p class="button"><a href="/competidor/novo">Saiba Mais</a></p>
+        </div>
+    </div>0
+    <div id="footer">
+        <p>&copy; UnitriGamesChampionship. All rights reserved.</p>
+    </div>
+
+</section>
+</html>
