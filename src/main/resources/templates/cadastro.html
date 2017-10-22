@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="index">
+
+<head>
+    <title>Cadastro - Unitri Games Championship</title>
+</head>
+<section layout:fragment="content">
+    <header layout:include="navcadastro"></header>
+    <div id="page">
+        <div class="post">
+            <div class="entry">
+                <div class="formulario">
+                    <form class="form-hotizontal" method="POST" action="/competidor" th:object="${competitor}">
+                        <h2 class="title"><a href="#">Digite seus dados!</a></h2>
+
+                        <div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+                            <span th:text="${mensagem}">Cadastrado com sucesso!!!</span>
+                        </div>
+
+                        <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+                            <div th:each="detailedError : ${#fields.detailedErrors()}">
+                                <span th:text="${detailedError.message}"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Nome</label>
+                            <input type="text" class="form-control" id="inputName"
+                                   aria-describedby="emailHelp" placeholder="Nome" th:field="*{name}"/>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="lastname">Sobrenome</label>
+                            <input type="text" class="form-control" id="lastname"
+                                   placeholder="Sobrenome" th:field="*{lastname}"/>
+                        </div><br/>
+
+                        <div class="form-group col-md-4">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                   placeholder="Password" th:field="*{password}"/>
+                        </div><br/>
+
+                        <div class="form-group col-md-4">
+                            <label for="nickname">Nickname</label>
+                            <input type="text" class="form-control" id="nickname"
+                                   placeholder="Nickname" th:field="*{nickname}"/>
+                        </div><br/>
+
+                        <div class="form-group col-md-4">
+                            <label for="birddate">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="birddate"
+                                   placeholder="Data de Nascimento" th:field="*{birdDate}"/>
+                        </div><br/>
+
+
+                        <div class="form-group col-md-4">
+                            <label for="exampleFormControlSelect1">Em qual jogo voce deseja participar?</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="game">
+                                <option value="CS: Global Ofencive">CS: Global Ofencive</option>
+                                <option value="League of Legends">League of Legends</option>
+                            </select>
+                        </div><br/><br/>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input"/>
+                                Concordo com os Termos
+                            </label>
+                        </div><br/>
+                        <button type="submit" class="btn btn-primary">Cadastrar-se</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <p>&copy; UnitriGamesChampionship. All rights reserved.</p>
+    </div>
+</section>
+
+</html>

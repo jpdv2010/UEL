@@ -1,0 +1,11 @@
+.team-list{
+    padding:30px;
+}
+
+.team-box{
+    float:right;
+    width:100px;
+    heigth:200px;
+    margin:20px;
+    background:white;
+}
