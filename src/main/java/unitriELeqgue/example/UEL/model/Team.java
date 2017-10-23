@@ -13,35 +13,22 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @NotEmpty(message = "digite um nome valido")
     private String name;
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     private String description;
+    private Boolean itsPaid=false;
+    @NotEmpty(message = "O time deve conter 5 jogadores!")
+    private String nickPlayer1;
+    @NotEmpty(message = "O time deve conter 5 jogadores!")
+    private String nickPlayer2;
+    @NotEmpty(message = "O time deve conter 5 jogadores!")
+    private String nickPlayer3;
+    @NotEmpty(message = "O time deve conter 5 jogadores!")
+    private String nickPlayer4;
+    @NotEmpty(message = "O time deve conter 5 jogadores!")
+    private String nickPlayer5;
+    private String nickReservePlayer;
+    private String game;
 
     public String getNickPlayer1() {
         return nickPlayer1;
@@ -83,12 +70,6 @@ public class Team {
         this.nickPlayer5 = nickPlayer5;
     }
 
-    private String nickPlayer1;
-    private String nickPlayer2;
-    private String nickPlayer3;
-    private String nickPlayer4;
-    private String nickPlayer5;
-
     public String getGame() {
         return game;
     }
@@ -97,5 +78,44 @@ public class Team {
         this.game = game;
     }
 
-    private String game;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+    public Boolean getItsPaid() {
+        return itsPaid;
+    }
+
+    public void setItsPaid(Boolean itsPaid) {
+        this.itsPaid = itsPaid;
+    }
+
+    public String getNickReservePlayer() {
+        return nickReservePlayer;
+    }
+
+    public void setNickReservePlayer(String nickReservePlayer) {
+        this.nickReservePlayer = nickReservePlayer;
+    }
 }
