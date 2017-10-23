@@ -14,6 +14,34 @@ import java.util.Date;
  */
 @Entity
 public class Competitor {
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @NotEmpty(message = "Digite um nome válido!")
+    private String name;
+    private String lastname;
+    @NotEmpty(message = "Digite um nick válido!")
+    private String nickname;
+
+    @NotNull(message = "Digite uma data válida!")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date birdDate;
+
+    @NotEmpty(message="Digite uma senha válida!")
+    private String password;
+
+    @NotEmpty(message="Numero de telefone invalido")
+    private String phoneNumber;
+
+    @NotNull(message = "Escolha um game!")
+    private String game;
+
 
     public Long getId() {
         return id;
@@ -71,31 +99,12 @@ public class Competitor {
         this.game = game;
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @NotEmpty(message = "Digite um nome válido!")
-    private String name;
-    private String lastname;
-    @NotEmpty(message = "Digite um nick válido!")
-    private String nickname;
-
-    @NotNull(message = "Digite uma data válida!")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
-    private Date birdDate;
-
-    @NotEmpty(message="Digite uma senha válida!")
-    private String password;
-
-
-    @NotNull(message = "Escolha um game!")
-    private String game;
-
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }
 

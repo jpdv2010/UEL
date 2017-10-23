@@ -13,7 +13,7 @@
         <div class="post">
             <div class="entry">
                 <div class="formulario" style="width:300px">
-                    <form method="POST" action="/time" th:object="${team}">
+                    <form class="form-horizontal" method="POST" action="/time" th:object="${team}">
 
                         <div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
                             <span th:text="${mensagem}">Cadastrado com sucesso!!!</span>
@@ -37,25 +37,45 @@
 
                         <div class="form-group">
                             <label class="form-control-label" for="formGroupExampleInput">Jogador 1</label>
-                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput" th:value="${captain.nickname}" name="nickPlayer1"/>
+                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput" th:value="${captain.nickname}" th:field="*{nickPlayer1}"/>
                         </div>
+
                         <div class="form-group">
                             <label class="form-control-label" for="formGroupExampleInput2">Jogador 2</label>
-                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput2" placeholder="Nickname" name="nickPlayer2"/>
+                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput2" placeholder="Nickname" th:field="*{nickPlayer2}"/>
                         </div>
+
                         <div class="form-group">
                             <label class="form-control-label" for="formGroupExampleInput3">Jogador 3</label>
-                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput3" placeholder="Nickname" name="nickPlayer3"/>
+                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput3" placeholder="Nickname" th:field="*{nickPlayer3}"/>
                         </div>
+
                         <div class="form-group">
                             <label class="form-control-label" for="formGroupExampleInput4">Jogador 4</label>
-                            <input type="text" class="form-control col-md 2" id="formGroupExampleInput4" placeholder="Nickname" name="nickPlayer4"/>
+                            <input type="text" class="form-control col-md 2" id="formGroupExampleInput4" placeholder="Nickname" th:field="*{nickPlayer4}"/>
                         </div>
+
                         <div class="form-group">
                             <label class="form-control-label" for="formGroupExampleInput5">Jogador 5</label>
-                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput5" placeholder="Nickname" name="nickPlayer5"/>
+                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput5" placeholder="Nickname" th:field="*{nickPlayer5}"/>
                         </div>
-                        <button type="submit" class="btn btn-primary">Cadastrar time</button>
+
+                        <div class="form-group">
+                            <label class="form-control-label" for="formGroupExampleInput6">Jogador Reserva</label>
+                            <input type="text" class="form-control col-md-2" id="formGroupExampleInput6" placeholder="Nickname" th:field="*{nickReservePlayer}"/>
+                            <small id="emailHelp" class="form-text text-muted">(Opcional!)</small>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="exampleFormControlSelect1">Em qual jogo voce deseja participar?</label>
+                            <select class="form-control" id="exampleFormControlSelect1" th:field="*{game}">
+                                <option value="CS: Global Ofencive">CS: Global Ofencive</option>
+                                <option value="League of Legends">League of Legends</option>
+                            </select>
+                        </div><br/>
+
+                            <button type="submit" class="btn btn-primary">Cadastrar time</button>
+
                     </form>
                 </div>
             </div>

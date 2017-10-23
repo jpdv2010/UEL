@@ -28,12 +28,12 @@ public class CompetitorController {
     @RequestMapping
     public ModelAndView save(@Valid Competitor competitor, BindingResult bindingResult){
         ModelAndView mv=new ModelAndView("teaminsc");
-        mv.addObject("captain",competitor);
         if(bindingResult.hasErrors()){
             mv.setViewName("cadastro");
             return mv;
         }
         competitors.save(competitor);
+        mv.addObject("captain",competitor);
         mv.addObject("mensagem","salvo com sucesso!");
         mv.addObject("team",new Team());
         return mv;
