@@ -19,7 +19,7 @@
                 <h2 class="title"><a href="#">Estes sao os times ja cadastrados!</a></h2>
                 <div class="team-list">
                     <div class="card" style="width: 20rem; float:left;" th:each="team : ${teamList}">
-                        <div class="card-body">
+                        <div class="card-body" th:if="${team.itsPaid} == true">
                             <h3 class="card-title" th:text="${team.name}">Card title</h3>
                             <h4 class="card-subtitle mb-2 text-muted" th:text="${team.game}">Card subtitle</h4>
                             <h6 class="card-subtitle mb-2 text-muted" th:text="${team.nickPlayer1}">Card subtitle</h6>

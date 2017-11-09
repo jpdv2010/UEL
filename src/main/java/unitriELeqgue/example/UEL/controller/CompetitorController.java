@@ -32,6 +32,7 @@ public class CompetitorController {
             mv.setViewName("cadastro");
             return mv;
         }
+
         competitors.save(competitor);
         mv.addObject("captain",competitor);
         mv.addObject("mensagem","salvo com sucesso!");
