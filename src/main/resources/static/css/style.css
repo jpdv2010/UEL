@@ -39,6 +39,7 @@ h3 {
 p, ul, ol {
 	margin-top: 0;
 	line-height: 180%;
+	color: #FFFFFF;
 }
 
 ul, ol {
@@ -67,7 +68,7 @@ a:hover {
 
 #header-wrapper {
 	overflow: hidden;
-	height: 600px;
+	/*height: 600px;*/
 }
 
 #header-wrapper-2 {

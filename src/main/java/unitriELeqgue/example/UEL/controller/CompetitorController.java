@@ -45,4 +45,9 @@ public class CompetitorController {
         return "home";
     }
 
+    @RequestMapping("/sobre")
+    public String sobre(){
+        return "sobre";
+    }
+
 }
