@@ -10,7 +10,9 @@ import unitriELeqgue.example.UEL.model.Team;
 import unitriELeqgue.example.UEL.repository.Teams;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/time")
@@ -18,11 +20,28 @@ public class TeamController {
     @Autowired
     Teams teams;
 
-    @RequestMapping("/createorjoin")
-    public ModelAndView createOrJoin(){
-        ModelAndView mv=new ModelAndView("teampage");
+    @RequestMapping("/cs")
+    public ModelAndView teamsCS(){
+        ModelAndView mv=new ModelAndView("teampagecs");
         List<Team> teamList=teams.findAll();
-        mv.addObject("teamList",teamList);
+        List<Team> csTeamList=new ArrayList<>();
+        for(Team team : teamList){
+            if(Objects.equals(team.getGame(), "CS: Global Ofencive") && !csTeamList.contains(team))
+                csTeamList.add(team);
+        }
+        mv.addObject("teamList",csTeamList);
+        return mv;
+    }
+    @RequestMapping("/lol")
+    public ModelAndView teamsLOL(){
+        ModelAndView mv=new ModelAndView("teampagelol");
+        List<Team> teamList=teams.findAll();
+        List<Team> lolTeamList=new ArrayList<>();
+        for(Team team : teamList){
+            if(Objects.equals(team.getGame(), "League of Legends") && !lolTeamList.contains(team))
+                lolTeamList.add(team);
+        }
+        mv.addObject("teamList",lolTeamList);
         return mv;
     }
 
