@@ -17,6 +17,7 @@
         <div id="page">
             <div class="post">
                 <h2 class="title"><a href="#">Estes sao os times ja cadastrados!</a></h2>
+<<<<<<< HEAD
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/time/cs">CS : Global Ofensive</a>
@@ -29,6 +30,22 @@
                     <p>conteudo</p>
                 </section>
 
+=======
+                <div class="team-list">
+                    <div class="card" style="width: 20rem; float:left;" th:each="team : ${teamList}">
+                        <div class="card-body" th:if="${team.itsPaid} == true">
+                            <h3 class="card-title" th:text="${team.name}">Card title</h3>
+                            <h4 class="card-subtitle mb-2 text-muted" th:text="${team.game}">Card subtitle</h4>
+                            <h6 class="card-subtitle mb-2 text-muted" th:text="${team.nickPlayer1}">Card subtitle</h6>
+                            <h6 class="card-subtitle mb-2 text-muted" th:text="${team.nickPlayer2}">Card subtitle</h6>
+                            <h6 class="card-subtitle mb-2 text-muted" th:text="${team.nickPlayer3}">Card subtitle</h6>
+                            <h6 class="card-subtitle mb-2 text-muted" th:text="${team.nickPlayer4}">Card subtitle</h6>
+                            <h6 class="card-subtitle mb-2 text-muted" th:text="${team.nickPlayer5}">Card subtitle</h6>
+                            <!--<p class="card-text" th:text="${team.description}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                        </div>
+                    </div>
+                </div>
+>>>>>>> 50eeba90042f41d5fe8615eb0c8b8a575f60173d
             </div>
         </div>
 
