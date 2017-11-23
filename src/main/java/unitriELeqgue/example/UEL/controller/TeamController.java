@@ -26,7 +26,7 @@ public class TeamController {
         List<Team> teamList=teams.findAll();
         List<Team> csTeamList=new ArrayList<>();
         for(Team team : teamList){
-            if(Objects.equals(team.getGame(), "CS: Global Ofencive"))
+            if(Objects.equals(team.getGame(), "CS: Global Ofensive"))
                 csTeamList.add(team);
         }
         mv.addObject("teamList",csTeamList);
