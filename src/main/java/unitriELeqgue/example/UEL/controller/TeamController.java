@@ -26,7 +26,7 @@ public class TeamController {
         List<Team> teamList=teams.findAll();
         List<Team> csTeamList=new ArrayList<>();
         for(Team team : teamList){
-            if(Objects.equals(team.getGame(), "CS: Global Ofencive") && !csTeamList.contains(team))
+            if(Objects.equals(team.getGame(), "CS: Global Ofencive"))
                 csTeamList.add(team);
         }
         mv.addObject("teamList",csTeamList);
@@ -38,7 +38,7 @@ public class TeamController {
         List<Team> teamList=teams.findAll();
         List<Team> lolTeamList=new ArrayList<>();
         for(Team team : teamList){
-            if(Objects.equals(team.getGame(), "League of Legends") && !lolTeamList.contains(team))
+            if(Objects.equals(team.getGame(), "League of Legends"))
                 lolTeamList.add(team);
         }
         mv.addObject("teamList",lolTeamList);
