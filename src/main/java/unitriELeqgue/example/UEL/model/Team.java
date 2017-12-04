@@ -16,9 +16,6 @@ public class Team {
     @NotEmpty(message = "digite um nome valido")
     private String name;
     private String description;
-    private Boolean itsPaid=false;
-    @NotEmpty(message = "O time deve conter 5 jogadores!")
-    private String nickPlayer1;
     @NotEmpty(message = "O time deve conter 5 jogadores!")
     private String nickPlayer2;
     @NotEmpty(message = "O time deve conter 5 jogadores!")
@@ -27,16 +24,14 @@ public class Team {
     private String nickPlayer4;
     @NotEmpty(message = "O time deve conter 5 jogadores!")
     private String nickPlayer5;
+
+    @OneToOne
+    @JoinColumn(name = "CAPTAIN_ID")
+    private Competitor player1;
+
     private String nickReservePlayer;
     private String game;
 
-    public String getNickPlayer1() {
-        return nickPlayer1;
-    }
-
-    public void setNickPlayer1(String nickPlayer1) {
-        this.nickPlayer1 = nickPlayer1;
-    }
 
     public String getNickPlayer2() {
         return nickPlayer2;
@@ -102,20 +97,19 @@ public class Team {
         this.description = description;
     }
 
-
-    public Boolean getItsPaid() {
-        return itsPaid;
-    }
-
-    public void setItsPaid(Boolean itsPaid) {
-        this.itsPaid = itsPaid;
-    }
-
     public String getNickReservePlayer() {
         return nickReservePlayer;
     }
 
     public void setNickReservePlayer(String nickReservePlayer) {
         this.nickReservePlayer = nickReservePlayer;
+    }
+
+    public Competitor getPlayer1() {
+        return player1;
+    }
+
+    public void setPlayer1(Competitor player1) {
+        this.player1 = player1;
     }
 }

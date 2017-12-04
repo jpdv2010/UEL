@@ -1,9 +1,7 @@
 package unitriELeqgue.example.UEL.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
 import org.springframework.format.annotation.DateTimeFormat;
-import unitriELeqgue.example.UEL.model.Games;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -38,9 +36,6 @@ public class Competitor {
 
     @NotEmpty(message="Numero de telefone invalido")
     private String phoneNumber;
-
-    @NotNull(message = "Escolha um game!")
-    private String game;
 
 
     public Long getId() {
@@ -89,14 +84,6 @@ public class Competitor {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getGame() {
-        return game;
-    }
-
-    public void setGame(String game) {
-        this.game = game;
     }
 
     public String getPhoneNumber() {
