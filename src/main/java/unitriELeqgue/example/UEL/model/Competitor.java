@@ -11,6 +11,7 @@ import java.util.Date;
  * Created by joaop on 06/09/2017.
  */
 @Entity
+@Table(name = "COMPETITOR")
 public class Competitor {
     @Override
     public int hashCode() {

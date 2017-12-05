@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import unitriELeqgue.example.UEL.model.Competitor;
 import unitriELeqgue.example.UEL.model.Team;
-import unitriELeqgue.example.UEL.repository.Teams;
+import unitriELeqgue.example.UEL.repository.TeamRepository;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.util.Objects;
 @RequestMapping("/time")
 public class TeamController {
     @Autowired
-    Teams teams;
+    TeamRepository teams;
 
     @RequestMapping("/cs")
     public ModelAndView teamsCS(){
